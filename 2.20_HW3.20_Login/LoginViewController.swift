@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet var userName: UITextField!
     @IBOutlet var password: UITextField!
     
@@ -23,17 +23,31 @@ class LoginViewController: UIViewController {
         
         
     }
-
-
     
+    
+    
+    @IBAction func LoginButton (_ sender: UIButton) {
+        performSegue(withIdentifier: "detailSegue", sender: nil)
+        
+        
+    }
     @IBAction func forgetUserNameButtonTapped() {
         let alert = UIAlertController(title: "Oops!!!", message: "Your User Name is Maria ;-)", preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
-        
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dvc = segue.destination as? WelcomeViewController else { return }
+        dvc.login = userName.text
+    
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
     
  
 
