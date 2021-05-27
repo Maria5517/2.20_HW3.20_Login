@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="View Controller" customClass="LoginViewController" customModule="__20_HW3_20_Login" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" userLabel="View Controller" customClass="LoginViewController" customModule="__20_HW3_20_Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                         <outlet property="loginButton" destination="61z-bp-Qx7" id="Pib-bd-Pvn"/>
                         <outlet property="password" destination="quE-rP-e07" id="PWi-1H-FF1"/>
                         <outlet property="userName" destination="Po5-34-him" id="Di0-Jc-s5d"/>
-                        <segue destination="Nrh-47-CEB" kind="show" identifier="detailSegue" id="rsI-zT-OD2"/>
+                        <segue destination="Nrh-47-CEB" kind="show" identifier="detailSegue" id="syz-S0-CwN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,9 +109,9 @@
         <!--Welcome View Controller-->
         <scene sceneID="UFP-C4-k0j">
             <objects>
-                <viewController id="Nrh-47-CEB" customClass="WelcomeViewController" customModule="__20_HW3_20_Login" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Nrh-47-CEB" customClass="WelcomeViewController" customModule="__20_HW3_20_Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TK3-AY-i6H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6z-4o-G2q">
@@ -124,6 +124,7 @@
                                 </state>
                                 <connections>
                                     <action selector="goBackTapped:" destination="Nrh-47-CEB" eventType="touchUpInside" id="EpV-3y-mvc"/>
+                                    <segue destination="rh8-Nl-uwT" kind="unwind" unwindAction="unwindSegueToMainScreenWithSegue:" id="PaH-YR-fnV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl1-Tp-XNS">
@@ -143,6 +144,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ex6-6d-Zkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rh8-Nl-uwT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="995.65217391304361" y="93.75"/>
         </scene>

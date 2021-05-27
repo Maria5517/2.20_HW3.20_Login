@@ -38,6 +38,10 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    @IBAction func unwindSegueToMainScreen(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let dvc = segue.destination as? WelcomeViewController else { return }
         dvc.login = userName.text
